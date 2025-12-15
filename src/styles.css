@@ -1,0 +1,273 @@
+/* === GLOBAL === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #151a3b 0, #050715 55%, #02030a 100%);
+  color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === APP LAYOUT === */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 6vw;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: rgba(5, 5, 20, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.7rem 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: conic-gradient(from 140deg, #ffca3a, #ff595e, #8ac926, #1982c4, #ffca3a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #050715;
+  font-weight: 700;
+}
+
+.logo-text {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #fdf4c4;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: #e0e4ff;
+  opacity: 0.85;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-links .btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 1px solid #ffca3a;
+  color: #ffca3a;
+  background: transparent;
+}
+
+.btn-primary {
+  border: none;
+  background: linear-gradient(135deg, #ffca3a, #ff9b3a);
+  color: #1b1525;
+}
+
+/* === HERO SECTION === */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin: 2rem 0 2.5rem;
+}
+
+.hero-heading {
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.hero-gradient {
+  background: linear-gradient(120deg, #ffca3a, #ff9b3a, #f65aa0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  color: #d6d9ff;
+  max-width: 540px;
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 9, 33, 0.8);
+}
+
+.hero-highlight {
+  font-size: 0.88rem;
+  color: #f4f1ff;
+  opacity: 0.9;
+}
+
+.hero-card {
+  background: radial-gradient(circle at top, rgba(255, 202, 58, 0.18), #07081b);
+  border-radius: 18px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 35px rgba(2, 3, 20, 0.95);
+}
+
+.hero-card-title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.hero-card-body {
+  font-size: 0.85rem;
+  color: #dcdfff;
+  opacity: 0.9;
+}
+
+.hero-card-kpi {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* === GRID CARDS === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: rgba(9, 10, 40, 0.96);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-subtitle {
+  font-size: 0.82rem;
+  color: #c5c8f5;
+  margin-bottom: 0.8rem;
+}
+
+.card-list {
+  list-style: none;
+  font-size: 0.86rem;
+  color: #e5e7ff;
+}
+
+.card-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* === SIMPLE PAGES (ABOUT, SERVICES, CONTACT, AUTH) === */
+.page {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+}
+
+.page h1,
+.page h2 {
+  margin-bottom: 0.8rem;
+}
+
+.page p {
+  color: #d9dcff;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+/* === FOOTER === */
+.footer {
+  background: #050614;
+  padding: 0.9rem 6vw;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a4a8d9;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+/* === FORMS & BUTTONS === */
+input,
+textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.45rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 6, 24, 0.9);
+  color: #f5f5ff;
+  font-size: 0.85rem;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badge {
+  cursor: pointer;
+}
